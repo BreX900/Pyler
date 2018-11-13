@@ -3,4 +3,4 @@ project(Pyler)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Pyler main.cpp)
+add_executable(Pyler main.cpp Utility.h)
