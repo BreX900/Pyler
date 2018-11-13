@@ -21,7 +21,11 @@ int main() {
     std::string line;
     while (getline(src, line)) {
         std::cout << line << "\n";
-        for (const auto &s: String(line).split(" ")) {
+        String string(line);
+        std::cout <<"con" <<string <<std::endl;
+        const auto splitResult =string.split(" ");
+        int c = 9 - 2;
+        for (const auto &s: splitResult) {
             std::cout << s << "-";
         }
 

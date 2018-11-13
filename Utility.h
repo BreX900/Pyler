@@ -21,16 +21,15 @@ public:
         std::transform(this->begin(), this->end(), this->begin(), ::tolower);
     }
 
-    std::vector<String> split(const std::string &delimiter) {
+    std::vector<String> split(const std::string &delimiter) const {
         std::vector<String> vString;
-
         unsigned long long pos = 0;
-        unsigned long long int first = 0;
+        unsigned long long first = 0;
         do {
             first = this->find(delimiter, pos);
             const unsigned long long following = first == std::string::npos ? this->size() : first;
-            vString.emplace_back(this->substr(pos, following));
-            pos = following;
+            vString.emplace_back(this->substr(pos, following-pos));
+            pos = following+1;
         } while(first != std::string::npos);
         return vString;
     }
